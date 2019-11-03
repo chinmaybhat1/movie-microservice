@@ -4,6 +4,12 @@ public class Rating {
 
 	private long movieId;
 	private int rating;
+	
+	
+
+	public Rating() {
+		super();
+	}
 
 	public Rating(long movieId, int rating) {
 		super();
