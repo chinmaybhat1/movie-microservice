@@ -23,11 +23,11 @@ public class MovieCatelogResource {
 	@RequestMapping("/{userId}")
 	public List<CatelogItem> getCatelog(@PathVariable("userId") String userId) {
 
-		UserRating userRatings = restTemplate.getForObject("http://localhost:7003/ratingdata/users/" + userId,
+		UserRating userRatings = restTemplate.getForObject("http://rating-data-service/ratingdata/users/" + userId,
 				UserRating.class);
 
 		return userRatings.getUserRatings().stream().map(rating -> {
-			Movie movie = restTemplate.getForObject("http://localhost:7004/movies/" + rating.getMovieId(), Movie.class);
+			Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
 
 			return new CatelogItem(movie.getName(), movie.getDesc(), rating.getRating());
 		}).collect(Collectors.toList());
