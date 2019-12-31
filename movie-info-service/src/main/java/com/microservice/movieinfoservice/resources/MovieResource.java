@@ -15,7 +15,7 @@ import com.microservice.movieinfoservice.models.MovieSummary;
 public class MovieResource {
 
 	@Value("${api.key}")
-	private String apiKey;
+	private char[] apiKey;
 
 	@Autowired
 	private RestTemplate restTemplate;
