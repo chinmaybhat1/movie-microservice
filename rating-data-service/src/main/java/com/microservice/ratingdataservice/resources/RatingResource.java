@@ -26,6 +26,7 @@ public class RatingResource {
 		List<Rating> ratings = Arrays.asList(new Rating(100L, 4), new Rating(101L, 5));
 		
 		UserRating userRating = new UserRating();
+		userRating.setUserId(userId);
 		userRating.setUserRatings(ratings);
 
 		return userRating;

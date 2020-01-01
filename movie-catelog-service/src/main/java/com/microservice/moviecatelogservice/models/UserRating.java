@@ -4,10 +4,19 @@ import java.util.List;
 
 public class UserRating {
 
+	private String userId;
 	private List<Rating> userRatings;
-	
+
 	public UserRating() {
 		super();
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public List<Rating> getUserRatings() {
